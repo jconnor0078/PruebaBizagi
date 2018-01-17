@@ -1,0 +1,601 @@
+﻿
+@model PruebaBizagi.ViewModels.FormViewModel
+<!-- BEGIN CONTENT -->
+<div class="clearfix">
+</div>
+<div class="page-container">
+    <div class="page-content-wrapper">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        Widget settings form goes here
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue">Save changes</button>
+                        <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        @*******************************************PRIMERA PARTE*********************************************@
+        @*****************************************************************************************************@
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN VALIDATION STATES-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-file-text-o"></i>Formulario para solicitud de préstamo vehicular.
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        @Html.BeginForm("sumit", "Home", FormMethod.Post, new { @class = "form-horizontal", id = "form_sample_3" })
+                        <!-- BEGIN FORM-->
+                        <div class="form-body">
+                            <h3 class="form-section">Información Principal <small>campos con (*) son obligatorios</small></h3>
+                            <div id="warningValidation" class="alert alert-danger display-hide">
+                                <button class="close" data-close="alert"></button>
+                                <span id="wmsj"></span>
+                            </div>
+                            <div id="Susses" class="alert alert-success display-hide">
+                                <button class="close" data-close="alert"></button>
+                                Su formulario fue enviado satisfactoriamente.
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    name <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.name, new { htmlAttributes = new { @class = "form-control" } })
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Nombres <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.nombres, new { htmlAttributes = new { @class = "form-control" } })
+                                    @*<input type="text" name="nombres" data-required="1" class="form-control" />*@
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Apellidos <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Cédula <span class="required">
+                                        *
+                                    </span>
+                                </label>
+
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.cedula, new { htmlAttributes = new { id = "mask_cedula", @class = "form-control" } })
+
+                                    <span class="help-block">
+                                        e.j.: 000-0000000-0
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Dirección <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.direccion1, new { htmlAttributes = new { @class = "form-control" } })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.direccion2, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.direccion3, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Teléfono Residencial <span class="required">
+
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.telefonoResidencial, new { htmlAttributes = new { id = "mask_phone", @class = "form-control" } })
+
+                                    <span class="help-block">
+                                        809/829-999-9999
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Teléfono Celular <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.telefonoCelular, new { htmlAttributes = new { id = "mask_phone2", @class = "form-control" } })
+
+                                    <span class="help-block">
+                                        809/829-999-9999
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Teléfono Oficina <span class="required">
+
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.telefonoOficina, new { htmlAttributes = new { id = "mask_phone3", @class = "form-control" } })
+
+                                    <span class="help-block">
+                                        809/829-999-9999
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">
+                                    Correo Electrónico <span class="required">
+
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                        @Html.EditorFor(f => f.correoElectronico, new { htmlAttributes = new { placeholder = "CorreoElectronico", type = "email", @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Fuente de ingreso <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.fuenteIngresoId, Model.fuenteIngreso.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Ingresos Mensuales <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        @Html.EditorFor(f => f.ingresosMensuales, new { htmlAttributes = new {  @class = "form-control" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Tipo de Vivienda <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.tipoViviendaId, Model.tipoVivienda.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Lugar de Trabajo <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.lugarTrabajo, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Posición Actual <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(f => f.posicionActual, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Años de Servicios <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        @Html.EditorFor(f => f.anoServicios, new { htmlAttributes = new { id = "mask_anoServ", @class = "form-control" } })
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*******************************************SEGUNDA PARTE*********************************************@
+                            @*****************************************************************************************************@
+
+                            <h3 class="form-section">Información de la Solicitud <small>campos con (*) son obligatorios</small></h3>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Tipo de Vehículo <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.tipoVehiculoId, Model.tipoVehiculo.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Marca <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.marcaId, Model.marca.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me", onchange = "fillModel()" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Modelo <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.modeloId, Model.modelo.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Condición <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.condicionId, Model.condicion.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Año del Vehículo <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        @Html.EditorFor(f => f.anoVehiculo, new { htmlAttributes = new { id = "mask_anoVehiculo", @class = "form-control", onkeyup = "fillTasaConfig()" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Período Tasa Fija <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.periodoTasaFijaId, Model.periodoTasaFija.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Plazo <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(f => f.plazoId, Model.plazo.AsEnumerable(), "Seleccione...", new { @class = "form-control select2me" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Monto a Solicitar <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        @Html.EditorFor(f => f.montoSolicitado, new { htmlAttributes = new {   @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">
+                                    Valor del Vehículo <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        @Html.EditorFor(f => f.valorVehiculo, new { htmlAttributes = new {  @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*******************************************TERCERA PARTE*********************************************@
+                            @*****************************************************************************************************@
+
+                            <h3 class="form-section">Carga de documentos <small>campos con (*) son obligatorios</small></h3>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Carta de Trabajo</label>
+                                <div class="col-md-4">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large">
+                                            <div class="form-control uneditable-input span3" data-trigger="fileinput">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+                                                </span>
+                                            </div>
+                                            <span class="input-group-addon btn default btn-file">
+                                                <span class="fileinput-new">
+                                                    Seleccionar archivo
+                                                </span>
+                                                <span class="fileinput-exists">
+                                                    Cambiar
+                                                </span>
+                                                <input type="file" name="ArchivoCartaTrabajo">
+                                            </span>
+                                            <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+                                                Remover
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Estado de Cuentas</label>
+                                <div class="col-md-4">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="input-group input-large">
+                                            <div class="form-control uneditable-input span3" data-trigger="fileinput">
+                                                <i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+                                                </span>
+                                            </div>
+                                            <span class="input-group-addon btn default btn-file">
+                                                <span class="fileinput-new">
+                                                    Seleccionar archivo
+                                                </span>
+                                                <span class="fileinput-exists">
+                                                    Cambiar
+                                                </span>
+                                                <input type="file" name="ArchivoEstadoCuenta">
+                                            </span>
+                                            <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+                                                Remover
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        @*******************************************PARTE FINAL***********************************************@
+                        @*****************************************************************************************************@
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-5 col-md-4">
+                                    <button type="submit" class="btn green">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- END FORM-->
+
+                    </div>
+                    <!-- END VALIDATION STATES-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+<!-- END CONTENT -->
+<!-- END CONTAINER -->
+<script>
+    document.onreadystatechange = () => {
+        debugger;
+        if (document.readyState === 'complete') {
+            document.getElementById('wmsj').innerHTML = "El formulario contiene errores.Favor revisar.";
+            document.getElementById("Susses").style.display = "none";
+            document.getElementById("warningValidation").style.display = "none";
+   
+            debugger;
+            if ('@Model.isOkRequest' == 'true')
+            {
+                document.getElementById("Susses").style.display = "block";
+
+                alert('ready');
+            }
+            if ('@Model.isOkRequest' == 'false') {
+                document.getElementById("warningValidation").style.display = "block";
+                document.getElementById('wmsj').innerHTML = '@Model.msjRequest';
+            }
+
+        }
+    };
+    function sumist() {
+        document.getElementById('wmsj').innerHTML = "El formulario contiene errores.Favor revisar.";
+        document.getElementById("Susses").style.display = "none";
+        document.getElementById("warningValidation").style.display = "none";
+ 
+    //buscando el valor del formulario
+        var data = new FormData();
+        var formData = $("#form_sample_3").serialize();
+
+        //var files = $("#file").get(0).files;
+        //if (files.length > 0) {
+        //    data.append("HelpSectionImages", files[0]);
+        //}
+
+
+        $.ajax({
+            // la URL para la petición
+            url: '@Url.Action("sumit", "Home")',
+
+            // la información a enviar
+            // (también es posible utilizar una cadena de datos)
+            data: formData,
+            processData: false,
+            // especifica si será una petición POST o GET
+            type: 'POST',
+
+            // el tipo de información que se espera de respuesta
+            dataType: 'json',
+            contentType: false,
+            // código a ejecutar si la petición es satisfactoria;
+            // la respuesta es pasada como argumento a la función
+            success: function (json) {
+                debugger;
+
+                }
+
+        });
+
+    };
+
+    function fillModel()
+    {
+        debugger;
+        var data = new FormData();
+        var id = "";
+        if ($("#marcaId").val()) {
+            id = $("#marcaId").val();
+        } else
+        {
+            id = "0";
+        }
+        data.append("IDMARCA", id );
+         $.ajax({
+                // la URL para la petición
+                url: '@Url.Action("ugetModels", "Home")',
+                data: data,
+                processData: false,
+                type: 'POST',
+                dataType: 'json',
+                contentType: false,
+                success: function (json) {
+                    debugger;
+                    fillDropDowns('modeloId', json);
+                },
+            });
+    };
+
+     function fillTasaConfig()
+     {
+
+         debugger;
+         //limpiamos el dropdown
+         var dd = $("#periodoTasaFijaId");
+         var cantidad = dd.children().size();
+         if (cantidad > 1) {
+             for (var i = 0; i < cantidad; i++) {
+                 dd.children()[0].remove()
+             }
+         }
+        var id = "";
+        if ($("#mask_anoVehiculo").val()) {
+            id = $("#mask_anoVehiculo").val();
+            if (id > 1000 && id < 9999) {
+                var data = new FormData();
+                data.append("ANOVEH", id );
+                $.ajax({
+                        // la URL para la petición
+                        url: '@Url.Action("ugetTasaConfig", "Home")',
+                        data: data,
+                        processData: false,
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: false,
+                        success: function (json) {
+                            debugger;
+                            fillDropDowns('periodoTasaFijaId', json);
+                        },
+                    });
+            }
+
+        }
+    };
+
+
+
+
+
+
+
+
+
+
+    function fillDropDowns(name, objList)
+    {
+        debugger;
+        var dd = $("#" + name);
+
+        //limpiamos el dropdown
+        var cantidad = dd.children().size();
+        if (cantidad > 1) {
+            for (var i = 0; i < cantidad; i++) {
+                dd.children()[0].remove()
+            }
+        }
+        //llenamos el dropdown
+        if (objList != null && objList.length>0) {
+            for (var i = 0; i < objList.length; i++) {
+                dd.append("<Option value='" + objList[i].Value + "'>" + objList[i].Text+"</Option>");
+            }
+        };
+    }
+</script>

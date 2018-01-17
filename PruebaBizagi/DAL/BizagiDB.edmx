@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LoanReq_FeriaDigitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FuenteIngreso">
+          <Key>
+            <PropertyRef Name="idFuenteIngreso" />
+          </Key>
+          <Property Name="idFuenteIngreso" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidFuenteIngreso" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblFuenteIngreso" Type="bit" Nullable="false" />
+          <Property Name="dplyFuenteIngreso" Type="tinyint" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Period">
+          <Key>
+            <PropertyRef Name="PeriodId" />
+          </Key>
+          <Property Name="PeriodId" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidPeriod" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblPeriod" Type="bit" Nullable="false" />
+          <Property Name="dplyPeriod" Type="tinyint" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="EnumName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="TasasConfig">
+          <Key>
+            <PropertyRef Name="idTasasConfig" />
+          </Key>
+          <Property Name="idTasasConfig" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidTasasConfig" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblTasasConfig" Type="bit" Nullable="false" />
+          <Property Name="dplyTasasConfig" Type="tinyint" Nullable="false" />
+          <Property Name="FromVehicleYear" Type="int" />
+          <Property Name="Plazo" Type="int" />
+          <Property Name="PlazoMaximo" Type="int" />
+          <Property Name="Tasa" Type="float" />
+          <Property Name="UntilVehicleYear" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="TGEN_CONDICION">
+          <Key>
+            <PropertyRef Name="idTGEN_CONDICION" />
+          </Key>
+          <Property Name="idTGEN_CONDICION" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidTGEN_CONDICION" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblTGEN_CONDICION" Type="bit" Nullable="false" />
+          <Property Name="dplyTGEN_CONDICION" Type="tinyint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TGEN_DESCTABLA7">
+          <Key>
+            <PropertyRef Name="DES_CODTAB" />
+            <PropertyRef Name="DES_CODIGO" />
+          </Key>
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="DES_CODTAB" Type="tinyint" Nullable="false" />
+          <Property Name="DES_CODIGO" Type="smallint" Nullable="false" />
+          <Property Name="DES_DESCRIPCION" Type="nvarchar" MaxLength="100" />
+          <Property Name="CODEISO" Type="nvarchar" MaxLength="8" />
+          <Property Name="DES_STATUS" Type="nvarchar" MaxLength="1" />
+          <Property Name="DES_TUCodigo" Type="int" />
+        </EntityType>
+        <EntityType Name="TGEN_MARCA">
+          <Key>
+            <PropertyRef Name="SECUENCE" />
+          </Key>
+          <Property Name="SECUENCE" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidTGEN_MARCA" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblTGEN_MARCA" Type="bit" Nullable="false" />
+          <Property Name="dplyTGEN_MARCA" Type="tinyint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="20" />
+          <Property Name="CODIGO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TGEN_MODELO">
+          <Key>
+            <PropertyRef Name="idTGEN_MODELO" />
+          </Key>
+          <Property Name="idTGEN_MODELO" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidTGEN_MODELO" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblTGEN_MODELO" Type="bit" Nullable="false" />
+          <Property Name="dplyTGEN_MODELO" Type="tinyint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="MARCA" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TGEN_TIPOVIVIENDA">
+          <Key>
+            <PropertyRef Name="idTGEN_TIPOVIVIENDA" />
+          </Key>
+          <Property Name="idTGEN_TIPOVIVIENDA" Type="bigint" Nullable="false" />
+          <Property Name="finalEnt" Type="int" Nullable="false" />
+          <Property Name="guidTGEN_TIPOVIVIENDA" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dsblTGEN_TIPOVIVIENDA" Type="bit" Nullable="false" />
+          <Property Name="dplyTGEN_TIPOVIVIENDA" Type="tinyint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="LoanReq_FeriaDigitalModelStoreContainer">
+          <EntitySet Name="FuenteIngreso" EntityType="Self.FuenteIngreso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Period" EntityType="Self.Period" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TasasConfig" EntityType="Self.TasasConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TGEN_CONDICION" EntityType="Self.TGEN_CONDICION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TGEN_DESCTABLA7" EntityType="Self.TGEN_DESCTABLA7" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TGEN_MARCA" EntityType="Self.TGEN_MARCA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TGEN_MODELO" EntityType="Self.TGEN_MODELO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TGEN_TIPOVIVIENDA" EntityType="Self.TGEN_TIPOVIVIENDA" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LoanReq_FeriaDigitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FuenteIngreso">
+          <Key>
+            <PropertyRef Name="idFuenteIngreso" />
+          </Key>
+          <Property Name="idFuenteIngreso" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidFuenteIngreso" Type="Guid" Nullable="false" />
+          <Property Name="dsblFuenteIngreso" Type="Boolean" Nullable="false" />
+          <Property Name="dplyFuenteIngreso" Type="Byte" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Period">
+          <Key>
+            <PropertyRef Name="PeriodId" />
+          </Key>
+          <Property Name="PeriodId" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidPeriod" Type="Guid" Nullable="false" />
+          <Property Name="dsblPeriod" Type="Boolean" Nullable="false" />
+          <Property Name="dplyPeriod" Type="Byte" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnumName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Quantity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TasasConfig">
+          <Key>
+            <PropertyRef Name="idTasasConfig" />
+          </Key>
+          <Property Name="idTasasConfig" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidTasasConfig" Type="Guid" Nullable="false" />
+          <Property Name="dsblTasasConfig" Type="Boolean" Nullable="false" />
+          <Property Name="dplyTasasConfig" Type="Byte" Nullable="false" />
+          <Property Name="FromVehicleYear" Type="Int32" />
+          <Property Name="Plazo" Type="Int32" />
+          <Property Name="PlazoMaximo" Type="Int32" />
+          <Property Name="Tasa" Type="Double" />
+          <Property Name="UntilVehicleYear" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TGEN_CONDICION">
+          <Key>
+            <PropertyRef Name="idTGEN_CONDICION" />
+          </Key>
+          <Property Name="idTGEN_CONDICION" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidTGEN_CONDICION" Type="Guid" Nullable="false" />
+          <Property Name="dsblTGEN_CONDICION" Type="Boolean" Nullable="false" />
+          <Property Name="dplyTGEN_CONDICION" Type="Byte" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TGEN_DESCTABLA7">
+          <Key>
+            <PropertyRef Name="DES_CODTAB" />
+            <PropertyRef Name="DES_CODIGO" />
+          </Key>
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="DES_CODTAB" Type="Byte" Nullable="false" />
+          <Property Name="DES_CODIGO" Type="Int16" Nullable="false" />
+          <Property Name="DES_DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CODEISO" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="DES_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DES_TUCodigo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TGEN_MARCA">
+          <Key>
+            <PropertyRef Name="SECUENCE" />
+          </Key>
+          <Property Name="SECUENCE" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidTGEN_MARCA" Type="Guid" Nullable="false" />
+          <Property Name="dsblTGEN_MARCA" Type="Boolean" Nullable="false" />
+          <Property Name="dplyTGEN_MARCA" Type="Byte" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TGEN_MODELO">
+          <Key>
+            <PropertyRef Name="idTGEN_MODELO" />
+          </Key>
+          <Property Name="idTGEN_MODELO" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidTGEN_MODELO" Type="Guid" Nullable="false" />
+          <Property Name="dsblTGEN_MODELO" Type="Boolean" Nullable="false" />
+          <Property Name="dplyTGEN_MODELO" Type="Byte" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MARCA" Type="Int64" />
+        </EntityType>
+        <EntityType Name="TGEN_TIPOVIVIENDA">
+          <Key>
+            <PropertyRef Name="idTGEN_TIPOVIVIENDA" />
+          </Key>
+          <Property Name="idTGEN_TIPOVIVIENDA" Type="Int64" Nullable="false" />
+          <Property Name="finalEnt" Type="Int32" Nullable="false" />
+          <Property Name="guidTGEN_TIPOVIVIENDA" Type="Guid" Nullable="false" />
+          <Property Name="dsblTGEN_TIPOVIVIENDA" Type="Boolean" Nullable="false" />
+          <Property Name="dplyTGEN_TIPOVIVIENDA" Type="Byte" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="LoanReq_FeriaDigitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FuenteIngresoes" EntityType="Self.FuenteIngreso" />
+          <EntitySet Name="Periods" EntityType="Self.Period" />
+          <EntitySet Name="TasasConfigs" EntityType="Self.TasasConfig" />
+          <EntitySet Name="TGEN_CONDICION" EntityType="Self.TGEN_CONDICION" />
+          <EntitySet Name="TGEN_DESCTABLA7" EntityType="Self.TGEN_DESCTABLA7" />
+          <EntitySet Name="TGEN_MARCA" EntityType="Self.TGEN_MARCA" />
+          <EntitySet Name="TGEN_MODELO" EntityType="Self.TGEN_MODELO" />
+          <EntitySet Name="TGEN_TIPOVIVIENDA" EntityType="Self.TGEN_TIPOVIVIENDA" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LoanReq_FeriaDigitalModelStoreContainer" CdmEntityContainer="LoanReq_FeriaDigitalEntities">
+          <EntitySetMapping Name="FuenteIngresoes">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.FuenteIngreso">
+              <MappingFragment StoreEntitySet="FuenteIngreso">
+                <ScalarProperty Name="idFuenteIngreso" ColumnName="idFuenteIngreso" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidFuenteIngreso" ColumnName="guidFuenteIngreso" />
+                <ScalarProperty Name="dsblFuenteIngreso" ColumnName="dsblFuenteIngreso" />
+                <ScalarProperty Name="dplyFuenteIngreso" ColumnName="dplyFuenteIngreso" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periods">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.Period">
+              <MappingFragment StoreEntitySet="Period">
+                <ScalarProperty Name="PeriodId" ColumnName="PeriodId" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidPeriod" ColumnName="guidPeriod" />
+                <ScalarProperty Name="dsblPeriod" ColumnName="dsblPeriod" />
+                <ScalarProperty Name="dplyPeriod" ColumnName="dplyPeriod" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EnumName" ColumnName="EnumName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TasasConfigs">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.TasasConfig">
+              <MappingFragment StoreEntitySet="TasasConfig">
+                <ScalarProperty Name="idTasasConfig" ColumnName="idTasasConfig" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidTasasConfig" ColumnName="guidTasasConfig" />
+                <ScalarProperty Name="dsblTasasConfig" ColumnName="dsblTasasConfig" />
+                <ScalarProperty Name="dplyTasasConfig" ColumnName="dplyTasasConfig" />
+                <ScalarProperty Name="FromVehicleYear" ColumnName="FromVehicleYear" />
+                <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+                <ScalarProperty Name="PlazoMaximo" ColumnName="PlazoMaximo" />
+                <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+                <ScalarProperty Name="UntilVehicleYear" ColumnName="UntilVehicleYear" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TGEN_CONDICION">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.TGEN_CONDICION">
+              <MappingFragment StoreEntitySet="TGEN_CONDICION">
+                <ScalarProperty Name="idTGEN_CONDICION" ColumnName="idTGEN_CONDICION" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidTGEN_CONDICION" ColumnName="guidTGEN_CONDICION" />
+                <ScalarProperty Name="dsblTGEN_CONDICION" ColumnName="dsblTGEN_CONDICION" />
+                <ScalarProperty Name="dplyTGEN_CONDICION" ColumnName="dplyTGEN_CONDICION" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TGEN_DESCTABLA7">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.TGEN_DESCTABLA7">
+              <MappingFragment StoreEntitySet="TGEN_DESCTABLA7">
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="DES_CODTAB" ColumnName="DES_CODTAB" />
+                <ScalarProperty Name="DES_CODIGO" ColumnName="DES_CODIGO" />
+                <ScalarProperty Name="DES_DESCRIPCION" ColumnName="DES_DESCRIPCION" />
+                <ScalarProperty Name="CODEISO" ColumnName="CODEISO" />
+                <ScalarProperty Name="DES_STATUS" ColumnName="DES_STATUS" />
+                <ScalarProperty Name="DES_TUCodigo" ColumnName="DES_TUCodigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TGEN_MARCA">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.TGEN_MARCA">
+              <MappingFragment StoreEntitySet="TGEN_MARCA">
+                <ScalarProperty Name="SECUENCE" ColumnName="SECUENCE" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidTGEN_MARCA" ColumnName="guidTGEN_MARCA" />
+                <ScalarProperty Name="dsblTGEN_MARCA" ColumnName="dsblTGEN_MARCA" />
+                <ScalarProperty Name="dplyTGEN_MARCA" ColumnName="dplyTGEN_MARCA" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TGEN_MODELO">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.TGEN_MODELO">
+              <MappingFragment StoreEntitySet="TGEN_MODELO">
+                <ScalarProperty Name="idTGEN_MODELO" ColumnName="idTGEN_MODELO" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidTGEN_MODELO" ColumnName="guidTGEN_MODELO" />
+                <ScalarProperty Name="dsblTGEN_MODELO" ColumnName="dsblTGEN_MODELO" />
+                <ScalarProperty Name="dplyTGEN_MODELO" ColumnName="dplyTGEN_MODELO" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TGEN_TIPOVIVIENDA">
+            <EntityTypeMapping TypeName="LoanReq_FeriaDigitalModel.TGEN_TIPOVIVIENDA">
+              <MappingFragment StoreEntitySet="TGEN_TIPOVIVIENDA">
+                <ScalarProperty Name="idTGEN_TIPOVIVIENDA" ColumnName="idTGEN_TIPOVIVIENDA" />
+                <ScalarProperty Name="finalEnt" ColumnName="finalEnt" />
+                <ScalarProperty Name="guidTGEN_TIPOVIVIENDA" ColumnName="guidTGEN_TIPOVIVIENDA" />
+                <ScalarProperty Name="dsblTGEN_TIPOVIVIENDA" ColumnName="dsblTGEN_TIPOVIVIENDA" />
+                <ScalarProperty Name="dplyTGEN_TIPOVIVIENDA" ColumnName="dplyTGEN_TIPOVIVIENDA" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
